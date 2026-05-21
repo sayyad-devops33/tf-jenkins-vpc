@@ -28,6 +28,7 @@ resource "aws_subnet" "private_subnet" {
 
   tags = {
     Name = "private-subnet"
+    Environment = "Dev"
   }
 }
 resource "aws_internet_gateway" "igw" {
