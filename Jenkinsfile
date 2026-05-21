@@ -30,7 +30,11 @@ pipeline {
         }
 
         stage('Terraform Apply') {
+		when {
+                  branch 'main'
+		}
             steps {
+		input message : 'Approve Terraform Apply?'
                 sh 'terraform apply -auto-approve'
             }
         }
